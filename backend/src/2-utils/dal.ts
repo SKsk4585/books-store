@@ -21,4 +21,6 @@ function execute(sql:string): Promise<any>{
     })
 }
 
-export default execute
+export default {
+    execute
+}
