@@ -31,6 +31,19 @@ router.post("/book", async(request:Request,response:Response,next:NextFunction)=
     }
 })
 
+//get all book
+router.get("/books", async(request:Request, response:Response,next:NextFunction)=>{
+    try {
+        const bookstorproduct = await booksLogic.getAllBooks()
+        response.json(bookstorproduct)
+        
+    } 
+    catch (error) {
+        next(error)
+        
+    }
+})
+
 
 
 

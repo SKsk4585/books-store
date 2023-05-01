@@ -2,7 +2,7 @@ class BookModel{
     public bookId:number
     public genreId:number
     public bookName:string
-    public summary:string
+    public Summary:string
     public price:number
     public stock:number
 
@@ -10,7 +10,7 @@ class BookModel{
         this.bookId = books.bookId
         this.genreId = books.genreId
         this.bookName = books.bookName
-        this.summary = books.summary
+        this.Summary = books.Summary
         this.price = books.price
         this.stock = books.stock
     }
