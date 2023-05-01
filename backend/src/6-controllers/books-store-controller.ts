@@ -1,5 +1,7 @@
 import express, { NextFunction, Request, Response, response } from "express"
 import booksLogic from "../5-logic/books-logic"
+import { request } from "http"
+import BookModel from "../4-models/book-model"
 
 const router = express.Router()
 
@@ -14,6 +16,22 @@ router.get("/genre", async(request:Request, response:Response,next:NextFunction)
         next(error)
         
     }
-
 })
+
+//add book
+router.post("/book", async(request:Request,response:Response,next:NextFunction)=>{
+    try {
+       const bookstorproduct = new BookModel(request.body)
+       const addedBook = await booksLogic.addBook(bookstorproduct)
+       response.status(201).json(addedBook)
+    } 
+    catch (error) {
+        next(error)
+        
+    }
+})
+
+
+
+
 export default router
