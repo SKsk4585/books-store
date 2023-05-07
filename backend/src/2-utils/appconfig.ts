@@ -3,7 +3,7 @@ class AppConfig{
     public user = "root"
     public password = ""
     public database = "booksStore"
-    public port = 3001   
+    public port = 3002   
 
 }
 

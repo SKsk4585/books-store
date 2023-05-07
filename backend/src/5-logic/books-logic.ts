@@ -27,9 +27,7 @@ async function addBook(bookstorproduct:BookModel):Promise<BookModel>{
 }
 
 async function getAllBooks():Promise<BookModel[]>{
-    const sql = `SELECT B.*,G.genreName
-                 FROM booksstorproducts AS B JOIN booksstorgenre AS G
-                 ON B.genreId = g.jenreId`
+    const sql = `SELECT * FROM booksstorproducts`
     const bookstorproduct = await dal.execute(sql)
     return bookstorproduct
 
